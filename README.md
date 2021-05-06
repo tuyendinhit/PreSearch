@@ -27,7 +27,7 @@ Daily, you have random 30 times which is rewarded 0.12 **PRE**. So after 1 month
 
 [17/04/2021] Multi-account. Support proxy. Hidden browser.
 
-[![SC2 Video](http://i3.ytimg.com/vi/d9pJiNJKpuY/maxresdefault.jpg)](https://www.youtube.com/watch?v=d9pJiNJKpuY)
+[![SC2 Video](http://i3.ytimg.com/vi/s5KaWlhLypA/maxresdefault.jpg)](https://www.youtube.com/watch?v=s5KaWlhLypA)
 
 [05/05/2021] Update new mechanism of Wordlist. Add a new Vietnamese wordlist with 74000 words. Now, you can use your custom wordlist. Add new user manipulation: Click to the next page of search result pages with a rate of 20%.
 
@@ -77,7 +77,7 @@ Hằng ngày, bạn có 30 lượt tìm kiếm ngẫu nhiên được tặng 0.1
 
 [17/04/2021] Đa tài khoản. Hỗ trợ proxy. Chạy ẩn trình duyệt.
 
-[![SC2 Video](http://i3.ytimg.com/vi/d9pJiNJKpuY/maxresdefault.jpg)](https://www.youtube.com/watch?v=d9pJiNJKpuY)
+[![SC2 Video](http://i3.ytimg.com/vi/s5KaWlhLypA/maxresdefault.jpg)](https://www.youtube.com/watch?v=s5KaWlhLypA)
 
 [05/05/2021] Cập nhật cơ chế danh sách từ. Thêm bộ từ tiếng Việt. Giờ đây, bạn đã có thể sử dụng bộ tự khóa của riêng mình. Thêm thao tác người dùng: Click vào trang tiếp theo trong các trang kết quả tìm kiếm với tỉ lệ 20%.
 
