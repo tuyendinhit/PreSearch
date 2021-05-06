@@ -31,6 +31,8 @@ Daily, you have random 30 times which is rewarded 0.12 **PRE**. So after 1 month
 
 [05/05/2021] Update new mechanism of Wordlist. Add a new Vietnamese wordlist with 74000 words. Now, you can use your custom wordlist. Add new user manipulation: Click to the next page of search result pages with a rate of 20%.
 
+[![SC2 Video](http://i3.ytimg.com/vi/KMUADGN5xNA/maxresdefault.jpg)](https://www.youtube.com/watch?v=KMUADGN5xNA)
+
 ###### Please do step by step to use:
 
 1. Install language **Python 3.9.x** https://www.python.org/downloads/.
@@ -78,6 +80,8 @@ Hằng ngày, bạn có 30 lượt tìm kiếm ngẫu nhiên được tặng 0.1
 [![SC2 Video](http://i3.ytimg.com/vi/d9pJiNJKpuY/maxresdefault.jpg)](https://www.youtube.com/watch?v=d9pJiNJKpuY)
 
 [05/05/2021] Cập nhật cơ chế danh sách từ. Thêm bộ từ tiếng Việt. Giờ đây, bạn đã có thể sử dụng bộ tự khóa của riêng mình. Thêm thao tác người dùng: Click vào trang tiếp theo trong các trang kết quả tìm kiếm với tỉ lệ 20%.
+
+[![SC2 Video](http://i3.ytimg.com/vi/KMUADGN5xNA/maxresdefault.jpg)](https://www.youtube.com/watch?v=KMUADGN5xNA)
 
 ###### Vui lòng thực hiện theo các bước sau:
 
