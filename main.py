@@ -13,6 +13,16 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from win10toast import ToastNotifier  # python -m pip install win10toast
 
+# Word list for generating key word
+os.chdir('Wordlist\\')
+dicts = glob.glob('*.txt')
+word_list = []
+for dict in dicts:
+    f = open(dict, 'r', encoding='utf8')
+    for line in f:
+        word_list.append(line.strip())
+os.chdir('..')
+
 # Browser config
 chromedriver_path = '.\\chromedriver.exe'  # <-- Change to your Chrome WebDriver path, replace "\" with "\\".
 opts = Options()
@@ -59,16 +69,6 @@ def PreSearch():
             'path': '/',
         },
     ]
-
-    # Word list for generating key word
-    os.chdir('Wordlist\\')
-    dicts = glob.glob('*.txt')
-    word_list = []
-    for dict in dicts:
-        f = open(dict, 'r', encoding='utf8')
-        for line in f:
-            word_list.append(line.strip())
-    os.chdir('..')
 
     presearch_max_count = 30
     while True:

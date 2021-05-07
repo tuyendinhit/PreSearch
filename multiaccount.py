@@ -14,7 +14,15 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from win10toast import ToastNotifier  # python -m pip install win10toast
 
-sync = True
+# Word list for generating key word
+os.chdir('Wordlist\\')
+dicts = glob.glob('*.txt')
+word_list = []
+for dict in dicts:
+    f = open(dict, 'r', encoding='utf8')
+    for line in f:
+        word_list.append(line.strip())
+os.chdir('..')
 
 # Multi account config
 accounts = [
@@ -87,6 +95,9 @@ def Notification(app, content):
         pass
 
 
+sync = True
+
+
 # Search 30 times
 def PreSearch(account):
     # Browser config
@@ -104,16 +115,6 @@ def PreSearch(account):
     app = 'PreSearch'
     path = 'https://engine.presearch.org'
     presearch_cookies = account['cookies']
-
-    # Word list for generating key word
-    os.chdir('Wordlist\\')
-    dicts = glob.glob('*.txt')
-    word_list = []
-    for dict in dicts:
-        f = open(dict, 'r', encoding='utf8')
-        for line in f:
-            word_list.append(line.strip())
-    os.chdir('..')
 
     presearch_max_count = 30
     while True:
