@@ -1,28 +1,15 @@
 # Auto Almost Everything
 # Youtube Channel https://www.youtube.com/channel/UC4cNnZIrjAC8Q4mcnhKqPEQ
-# Facebook Community https://www.facebook.com/loveAAEmuch
-# Github Source Code https://github.com/srcAAE?tab=repositories
 # Please read README.md carefully before use
 
-import random
-import threading
-import time
-import glob
-import os
-from selenium import webdriver  # python -m pip install seleniu
+import threading, random, time
+from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
-from win10toast import ToastNotifier  # python -m pip install win10toast
+from Modules import update, notification, wordlist
 
-# Word list for generating key word
-os.chdir('Wordlist\\')
-dicts = glob.glob('*.txt')
-word_list = []
-for dict in dicts:
-    f = open(dict, 'r', encoding='utf8')
-    for line in f:
-        word_list.append(line.strip())
-os.chdir('..')
+app = 'PreSearch'
+wl = wordlist.get()
 
 # Multi account config
 accounts = [
@@ -85,16 +72,6 @@ accounts = [
     },  # <-- Account 3
 ]
 
-
-# Notification
-def Notification(app, content):
-    try:
-        toast = ToastNotifier()
-        toast.show_toast(app, content, duration=6)
-    except:
-        pass
-
-
 sync = True
 
 
@@ -107,13 +84,11 @@ def PreSearch(account):
     opts.add_experimental_option('excludeSwitches', ['enable-automation'])
     opts.add_experimental_option('useAutomationExtension', False)
     opts.add_experimental_option('prefs', {'download_restrictions': 3})
-    opts.headless = True  # <-- Comment this line if you want to show browser.
+    # opts.headless = True  # <-- Comment this line if you want to show browser.
     if 'proxy' in account and account['proxy'] != 'YourProxy':
         opts.add_argument('--proxy-server=%s' % account['proxy'])
 
-    # App config
-    app = 'PreSearch'
-    path = 'https://engine.presearch.org'
+    search_path = 'https://engine.presearch.org'
     presearch_cookies = account['cookies']
 
     presearch_max_count = 30
@@ -124,18 +99,17 @@ def PreSearch(account):
             browser = webdriver.Chrome(options=opts, executable_path=chromedriver_path)
             browser.set_page_load_timeout(60)
             try:
-                browser.get(path)
+                browser.get(search_path)
                 time.sleep(1)
                 for cookie in presearch_cookies:
                     browser.add_cookie(cookie)
-                browser.get(path)
+                browser.get(search_path)
                 time.sleep(1)
                 count = 0
                 while True:
-                    browser.get(path)
+                    browser.get(search_path)
                     time.sleep(random.randint(3, 12))
-                    q = ' '.join(
-                        [word_list[random.randint(0, len(word_list))] for j in range(random.randint(1, 3))])
+                    q = wordlist.gen(wl)
                     try:
                         browser.find_element_by_xpath("//input[@placeholder='Search']").send_keys(q, Keys.ENTER)
                         time.sleep(3)
@@ -164,12 +138,12 @@ def PreSearch(account):
                     except:
                         pass
                     if count > presearch_max_count * random.randint(6, 14) * 10 / 100:
-                        Notification(app, 'Searched 30 times!')
+                        notification.notify(app, 'Searched 30 times!')
                         break
                     time.sleep(random.randint(20, 40))
             except Exception as ex:
                 print('%s has exception:\n%s!' % (app, ex))
-                Notification(app, '%s has exception:\n%s!' % (app, ex))
+                notification.notify(app, '%s has exception:\n%s!' % (app, ex))
             finally:
                 browser.quit()
             sync = True
@@ -178,16 +152,17 @@ def PreSearch(account):
             time.sleep(1)
 
 
-try:
-    threads = []
-    for account in accounts:
-        threads.append(threading.Thread(target=PreSearch, args=(account,)))
-    for thread in threads:
-        thread.start()
-    for thread in threads:
-        thread.join()
-except Exception as ex:
-    print('Threading has exception:\n%s!' % ex)
-
-# Please Like Facebook, Subscribe to Youtube channel, Give stars to Git repositories to support us!
-# Contact me: autoalmosteverything.2021@gmail.com
+if update.check():
+    notification.notify(app, 'New version is released. Please download it! Thank you.')
+else:
+    try:
+        threads = []
+        for account in accounts:
+            threads.append(threading.Thread(target=PreSearch, args=(account,)))
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join()
+    except Exception as ex:
+        print('%s has exception:\n%s!' % (app, ex))
+        notification.notify(app, '%s has exception:\n%s!' % (app, ex))

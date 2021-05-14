@@ -1,14 +1,10 @@
-# PreSearch
+# PreSearch Auto Search
 
 ### [English - Tiếng Việt bên dưới]
 
-##### PreSearch automation search
-
-Start to claim **PRE** token (is listed on KuCoin, read
-more [CoinMarketCap](https://coinmarketcap.com/currencies/presearch/)) from now!
-
-Daily, you have random 30 times which is rewarded 0.12 **PRE**. So after 1 month, you may receive 108 PRE ~ 10 dollars (
-1 **PRE** = 0.09882 dollar). But, PreSearch is not good enough from Google or Bing so it's not comfortable to use!
+Start to claim **PRE** token (is listed on KuCoin, read more ) from now! Daily, you have random 30 times which is
+rewarded 0.12 **PRE**. So after 1 month, you may receive 108 PRE ~ 10 dollars (
+1 **PRE** = 0.09882 dollar).
 
 ###### Functions:
 
@@ -23,28 +19,22 @@ Daily, you have random 30 times which is rewarded 0.12 **PRE**. So after 1 month
 
 ###### Tutorial:
 
-[16/04/2021]
+v1.0 [View on Youtube](https://www.youtube.com/watch?v=uUgZGGnTmDk)
 
 - Single account.
 
-[![SC2 Video](http://i3.ytimg.com/vi/uUgZGGnTmDk/maxresdefault.jpg)](https://www.youtube.com/watch?v=uUgZGGnTmDk)
-
-[17/04/2021]
+v1.1 [View on Youtube](https://www.youtube.com/watch?v=s5KaWlhLypA)
 
 - Multi-account.
 - Support proxy.
 - Hidden browser.
 
-[![SC2 Video](http://i3.ytimg.com/vi/s5KaWlhLypA/maxresdefault.jpg)](https://www.youtube.com/watch?v=s5KaWlhLypA)
-
-[05/05/2021]
+v1.3 [View on Youtube](https://www.youtube.com/watch?v=KMUADGN5xNA)
 
 - Update new mechanism of Wordlist.
 - Add a new Vietnamese wordlist with 74000 words.
 - Now, you can use your custom wordlist.
 - Add new user manipulation: Click to the next page of search result pages with a rate of 20%.
-
-[![SC2 Video](http://i3.ytimg.com/vi/KMUADGN5xNA/maxresdefault.jpg)](https://www.youtube.com/watch?v=KMUADGN5xNA)
 
 ###### Please do step by step to use:
 
@@ -52,7 +42,7 @@ Daily, you have random 30 times which is rewarded 0.12 **PRE**. So after 1 month
 
 [![SC2 Video](http://i3.ytimg.com/vi/_CoijjMXvYY/hqdefault.jpg)](https://www.youtube.com/watch?v=_CoijjMXvYY)
 
-2. Install modules **selenium**, **win10toast** `python -m pip install selenium win10toast`.
+2. Install modules **request**, **selenium**, **win10toast** `python -m pip install selenium win10toast`.
 
 [![SC2 Video](http://i3.ytimg.com/vi/SQQRYAMl8Jk/hqdefault.jpg)](https://www.youtube.com/watch?v=SQQRYAMl8Jk)
 
@@ -68,14 +58,9 @@ Daily, you have random 30 times which is rewarded 0.12 **PRE**. So after 1 month
 
 ### [Tiếng Việt - English above]
 
-##### Tìm kiếm tự động với PreSearch
-
 Bắt đầu nhận **PRE** token (đã lên sàn KuCoin, xem
-thêm [CoinMarketCap](https://coinmarketcap.com/currencies/presearch/)) ngay bây giờ!
-
-Hằng ngày, bạn có 30 lượt tìm kiếm ngẫu nhiên được tặng 0.12 **PRE**. Nên sau 1 tháng, bạn có thể nhận được 108 PRE ~ 10
-dollars (1 **PRE** = 0.09882 đô). Song, PreSearch không đủ tốt so với Google hay Bing nên không thoải mái lắm khi sử
-dụng!
+thêm [CoinMarketCap](https://coinmarketcap.com/currencies/presearch/)) ngay bây giờ! Hằng ngày, bạn có 30 lượt tìm kiếm
+ngẫu nhiên được tặng 0.12 **PRE**. Nên sau 1 tháng, bạn có thể nhận được 108 PRE ~ 10 dollars (1 **PRE** = 0.09882 đô).
 
 ###### Tính năng:
 
@@ -93,28 +78,22 @@ dụng!
 
 ###### Hướng dẫn:
 
-[16/04/2021]
+v1.0 [Xem trên Youtube](https://www.youtube.com/watch?v=uUgZGGnTmDk)
 
 - Đơn tài khoản.
 
-[![SC2 Video](http://i3.ytimg.com/vi/uUgZGGnTmDk/maxresdefault.jpg)](https://www.youtube.com/watch?v=uUgZGGnTmDk)
-
-[17/04/2021]
+v1.1 [Xem trên Youtube](https://www.youtube.com/watch?v=s5KaWlhLypA)
 
 - Đa tài khoản.
 - Hỗ trợ proxy.
 - Chạy ẩn trình duyệt.
 
-[![SC2 Video](http://i3.ytimg.com/vi/s5KaWlhLypA/maxresdefault.jpg)](https://www.youtube.com/watch?v=s5KaWlhLypA)
-
-[05/05/2021]
+v1.3 [Xem trên Youtube](https://www.youtube.com/watch?v=KMUADGN5xNA)
 
 - Cập nhật cơ chế danh sách từ.
 - Thêm bộ từ tiếng Việt.
 - Giờ đây, bạn đã có thể sử dụng bộ tự khóa của riêng mình.
 - Thêm thao tác người dùng: Click vào trang tiếp theo trong các trang kết quả tìm kiếm với tỉ lệ 20%.
-
-[![SC2 Video](http://i3.ytimg.com/vi/KMUADGN5xNA/maxresdefault.jpg)](https://www.youtube.com/watch?v=KMUADGN5xNA)
 
 ###### Vui lòng thực hiện theo các bước sau:
 
@@ -122,7 +101,7 @@ dụng!
 
 [![SC2 Video](http://i3.ytimg.com/vi/_CoijjMXvYY/hqdefault.jpg)](https://www.youtube.com/watch?v=_CoijjMXvYY)
 
-2. Cài đặt modules **selenium**, **win10toast** `python -m pip install selenium win10toast`.
+2. Cài đặt modules **request**, **selenium**, **win10toast** `python -m pip install selenium win10toast`.
 
 [![SC2 Video](http://i3.ytimg.com/vi/SQQRYAMl8Jk/hqdefault.jpg)](https://www.youtube.com/watch?v=SQQRYAMl8Jk)
 
@@ -137,10 +116,7 @@ dụng!
 
 # Auto Almost Everything
 
-Email: autoalmosteverything.2021@gmail.com
-
-Youtube: https://www.youtube.com/channel/UC4cNnZIrjAC8Q4mcnhKqPEQ
-
-Github: https://github.com/autoalmosteverything?tab=repositories
-
-Facebook: https://www.facebook.com/autoalmosteverything
+- Email: autoalmosteverything.2021@gmail.com
+- Youtube: https://www.youtube.com/channel/UC4cNnZIrjAC8Q4mcnhKqPEQ
+- Github: https://github.com/autoalmosteverything?tab=repositories
+- Facebook: https://www.facebook.com/autoalmosteverything
