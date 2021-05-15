@@ -16,6 +16,7 @@ rewarded 0.12 **PRE**. So after 1 month, you may receive 108 PRE ~ 10 dollars (
 6. Search more than 30 times (random from 100% to 150%) each run, then pause random time, loop forever.
 7. Support single account, multi account with proxy.
 8. Allow hiding browser.
+9. Integrate NetBox to earn NBX.
 
 ###### Tutorial:
 
@@ -28,6 +29,10 @@ v1.1 [View on Youtube](https://www.youtube.com/watch?v=s5KaWlhLypA)
 - Multi-account.
 - Support proxy.
 - Hidden browser.
+
+v1.2 [View on Youtube](https://www.youtube.com/watch?v=v4L-ri5zdSs)
+
+- Integrate NetBox to earn NBX.
 
 v1.3 [View on Youtube](https://www.youtube.com/watch?v=KMUADGN5xNA)
 
@@ -75,6 +80,7 @@ ngẫu nhiên được tặng 0.12 **PRE**. Nên sau 1 tháng, bạn có thể n
    tận.
 7. Hỗ trợ một tài khoản, nhiều tài khoản với proxy.
 8. Cho phép ẩn trình duyệt.
+9. Tích hợp trình duyệt NetBox để kiếm NBX.
 
 ###### Hướng dẫn:
 
@@ -87,6 +93,10 @@ v1.1 [Xem trên Youtube](https://www.youtube.com/watch?v=s5KaWlhLypA)
 - Đa tài khoản.
 - Hỗ trợ proxy.
 - Chạy ẩn trình duyệt.
+
+v1.2 [Xem trên Youtube](https://www.youtube.com/watch?v=v4L-ri5zdSs)
+
+- Tích hợp NetBox để kiếm NBX.
 
 v1.3 [Xem trên Youtube](https://www.youtube.com/watch?v=KMUADGN5xNA)
 

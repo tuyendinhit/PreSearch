@@ -6,6 +6,8 @@ import threading, random, time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import Proxy
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from Modules import update, notification, wordlist
 
 app = 'PreSearch'
@@ -34,42 +36,43 @@ accounts = [
                 'path': '/',
             },
         ],
-        # 'proxy': 'YourProxy',  # <-- To use proxy, remove comment this line then replace 'YourProxy' by proxy string, such as 18.222.190.66:81.
+        # 'proxy': 'YourProxy', # <-- To use proxy, remove comment this line then replace 'YourProxy' by proxy string, ex: 18.222.190.66:81
     },  # <-- Account 1
     {  # Account 2 -->
         'cookies': [
             {
                 'name': 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d',
-                'value': 'YourRememberTokenHere',
+                'value': 'YourRememberToken',
                 'domain': '.presearch.org',
                 'path': '/',
             },
             {
                 'name': 'token',
-                'value': 'YourTokenHere',
+                'value': 'YourToken',
                 'domain': '.presearch.org',
                 'path': '/',
             },
         ],
-        # 'proxy': 'YourProxy',  # <-- To use proxy, remove comment this line then replace 'YourProxy' by proxy string, such as 18.222.190.66:81.
+        # 'proxy': 'YourProxy', # <-- To use proxy, remove comment this line then replace 'YourProxy' by proxy string, ex: 18.222.190.66:81
     },  # <-- Account 2
     {  # Account 3 -->
         'cookies': [
             {
                 'name': 'remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d',
-                'value': 'YourRememberTokenHere',
+                'value': 'YourRememberToken',
                 'domain': '.presearch.org',
                 'path': '/',
             },
             {
                 'name': 'token',
-                'value': 'YourTokenHere',
+                'value': 'YourToken',
                 'domain': '.presearch.org',
                 'path': '/',
             },
         ],
-        # 'proxy': 'YourProxy',  # <-- To use proxy, remove comment this line then replace 'YourProxy' by proxy string, such as 18.222.190.66:81.
+        # 'proxy': 'YourProxy', # <-- To use proxy, remove comment this line then replace 'YourProxy' by proxy string, ex: 18.222.190.66:81
     },  # <-- Account 3
+    # <-- Account n
 ]
 
 sync = True
@@ -81,12 +84,43 @@ def PreSearch(account):
     chromedriver_path = '.\\chromedriver.exe'  # <-- Change to your Chrome WebDriver path, replace "\" with "\\".
     opts = Options()
     opts.binary_location = 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe'  # <-- Change to your Chromium browser path, replace "\" with "\\".
+    isNetBox = True
+    if opts.binary_location.split('\\')[-1].split('.')[0].lower() != "netboxbrowser":
+        isNetBox = False
     opts.add_experimental_option('excludeSwitches', ['enable-automation'])
     opts.add_experimental_option('useAutomationExtension', False)
     opts.add_experimental_option('prefs', {'download_restrictions': 3})
     # opts.headless = True  # <-- Comment this line if you want to show browser.
-    if 'proxy' in account and account['proxy'] != 'YourProxy':
-        opts.add_argument('--proxy-server=%s' % account['proxy'])
+    cap = DesiredCapabilities.CHROME.copy()
+    cap['platform'] = 'WINDOWS'
+    cap['version'] = '10'
+    if 'proxy' in account and account['proxy'] != '' and account['proxy'] != 'YourProxy':
+        proxies = Proxy({
+            'httpProxy': account['proxy'],
+            'ftpProxy': account['proxy'],
+            'sslProxy': account['proxy'],
+            'proxyType': 'MANUAL',
+        })
+        proxies.add_to_capabilities(cap)
+        opts.add_argument('--ignore-ssl-errors=yes')
+        opts.add_argument('--ignore-certificate-errors')
+
+    if isNetBox:
+        netbox_login_path = 'https://account.netbox.global/'
+        netbox_cookies = [
+            {
+                'name': 'token',
+                # Replace by your token -->
+                'value': 'YourToken',
+                # <-- Replace by your token
+                'domain': '.netbox.global',
+                'path': '/',
+            },
+        ]
+        netbox_wallet_path = 'chrome://wallet'
+        # Replace by your wallet code -->
+        netbox_wallet_code = 'YourWalletCode'
+        # <-- Replace by your wallet code
 
     search_path = 'https://engine.presearch.org'
     presearch_cookies = account['cookies']
@@ -96,9 +130,26 @@ def PreSearch(account):
         global sync
         if sync:
             sync = False
-            browser = webdriver.Chrome(options=opts, executable_path=chromedriver_path)
+            browser = webdriver.Chrome(desired_capabilities=cap, options=opts, executable_path=chromedriver_path)
             browser.set_page_load_timeout(60)
             try:
+                if isNetBox:
+                    browser.get(netbox_login_path)
+                    time.sleep(1)
+                    for cookie in netbox_cookies:
+                        browser.add_cookie(cookie)
+                    browser.get(netbox_login_path)
+                    time.sleep(1)
+                    browser.get(netbox_wallet_path)
+                    time.sleep(1)
+                    try:
+                        browser.find_element_by_xpath("//textarea[@id='restore__mnemonic']").send_keys(
+                            netbox_wallet_code)
+                        browser.find_element_by_xpath("//button[@id='restore__control']").click()
+                        time.sleep(30)
+                    except:
+                        pass
+
                 browser.get(search_path)
                 time.sleep(1)
                 for cookie in presearch_cookies:
@@ -115,7 +166,7 @@ def PreSearch(account):
                         time.sleep(3)
                         if 'Oops, something went wrong with your search' not in browser.page_source and 'The request could not be satisfied' not in browser.title:
                             currentPage = 1
-                            for i in range(random.randint(1, 7)):
+                            for i in range(random.randint(1, 5)):
                                 try:
                                     if (random.randint(1, 10)) <= 2:
                                         currentUrl = str(browser.current_url)
@@ -158,7 +209,11 @@ else:
     try:
         threads = []
         for account in accounts:
-            threads.append(threading.Thread(target=PreSearch, args=(account,)))
+            if 'cookies' in account['cookies'] and 'value' in accounts['cookies'][0] and account['cookies'][0][
+                'value'] == 'YourRememberToken':
+                threads.append(threading.Thread(target=PreSearch, args=(account,)))
+        if len(threads) == 0:
+            raise Exception('No account to run!')
         for thread in threads:
             thread.start()
         for thread in threads:
