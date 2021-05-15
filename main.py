@@ -1,5 +1,5 @@
 # Auto Almost Everything
-# Youtube Channel https://www.youtube.com/channel/UC4cNnZIrjAC8Q4mcnhKqPEQ
+# Youtube Channel https://www.youtube.com/c/AutoAlmostEverything
 # Please read README.md carefully before use
 
 import random, time
