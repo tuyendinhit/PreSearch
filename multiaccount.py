@@ -209,8 +209,8 @@ else:
     try:
         threads = []
         for account in accounts:
-            if 'cookies' in account['cookies'] and 'value' in accounts['cookies'][0] and account['cookies'][0][
-                'value'] == 'YourRememberToken':
+            if 'cookies' in account and 'value' in account['cookies'][0] and account['cookies'][0][
+                'value'] != 'YourRememberToken':
                 threads.append(threading.Thread(target=PreSearch, args=(account,)))
         if len(threads) == 0:
             raise Exception('No account to run!')

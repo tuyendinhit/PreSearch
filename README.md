@@ -24,7 +24,7 @@ v1.0 [View on Youtube](https://www.youtube.com/watch?v=uUgZGGnTmDk)
 
 - Single account.
 
-v1.1 [View on Youtube](https://www.youtube.com/watch?v=s5KaWlhLypA)
+v1.1 [View on Youtube](https://youtu.be/_nuRBkxybjg)
 
 - Multi-account.
 - Support proxy.
@@ -88,7 +88,7 @@ v1.0 [Xem trên Youtube](https://www.youtube.com/watch?v=uUgZGGnTmDk)
 
 - Đơn tài khoản.
 
-v1.1 [Xem trên Youtube](https://www.youtube.com/watch?v=s5KaWlhLypA)
+v1.1 [View on Youtube](https://youtu.be/_nuRBkxybjg)
 
 - Đa tài khoản.
 - Hỗ trợ proxy.
